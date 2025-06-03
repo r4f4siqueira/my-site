@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-    title: 'r4f4siqueira',
-    description: 'Rafael Siqueira',
+    title: 'Rafael Siqueira',
+    description: 'I created this website at the beginning of my studies in next.js and I maintain it with some updates',
 };
 
 export default function RootLayout({

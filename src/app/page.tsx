@@ -1,9 +1,5 @@
-import { Box, Text } from '@chakra-ui/react';
+import HomePage from './home/page';
 
-export default function Home() {
-    return (
-        <Box>
-            <Text>My name is Rafael</Text>
-        </Box>
-    );
+export default function Page() {
+    return <HomePage />;
 }

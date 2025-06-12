@@ -6,7 +6,8 @@
         "dev": "next dev --turbopack",
         "build": "next build",
         "start": "next start",
-        "lint": "next lint"
+        "lint": "next lint",
+        "ts-lint": "npx tsc --noEmit --incremental"
     },
     "dependencies": {
         "@chakra-ui/react": "^3.19.2",

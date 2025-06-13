@@ -2,7 +2,7 @@ import { Box, Text } from '@chakra-ui/react';
 
 export default function Sobre() {
     return (
-        <Box>
+        <Box fontSize={'lg'}>
             <Text marginBottom={4}>
                 Minha jornada profissional teve início em um ambiente desafiador, trabalhando na feira livre da cidade.
                 Essa experiência me proporcionou um desenvolvimento pessoal significativo, fortalecendo valores como

@@ -22,6 +22,7 @@ export default function AcordionHome(item: AccordionHomeType, index?: number) {
                     {item.icon}
                 </Icon>
                 {item.title}
+                <Accordion.ItemIndicator />
             </Accordion.ItemTrigger>
             <Accordion.ItemContent>
                 <Accordion.ItemBody>{item.content}</Accordion.ItemBody>

@@ -49,12 +49,7 @@ export default function HomePage() {
             </GridItem>
 
             <GridItem colSpan={[4, 4, 3, 3]}>
-                <Accordion.Root
-                    collapsible
-                    defaultValue={['Sobre']}
-                >
-                    {items.map(AcordionHome)}
-                </Accordion.Root>
+                <Accordion.Root collapsible>{items.map(AcordionHome)}</Accordion.Root>
             </GridItem>
         </Grid>
     );

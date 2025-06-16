@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from 'next/font/google';
 import { Provider } from '@/components/ui/provider';
 import Header from '@/components/Header/Header';
 import { Box, Center } from '@chakra-ui/react';
+import { Toaster } from '@/components/ui/toaster';
 
 const geistSans = Geist({
     variable: '--font-geist-sans',
@@ -40,6 +41,7 @@ export default function RootLayout({
                             {children}
                         </Box>
                     </Center>
+                    <Toaster />
                 </Provider>
             </body>
         </html>

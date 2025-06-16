@@ -12,7 +12,7 @@ export function HeaderMenu() {
                     variant={'surface'}
                     colorPalette={'blue'}
                 >
-                    Links
+                    Sobre
                 </Button>
             </Link>
 
@@ -21,7 +21,7 @@ export function HeaderMenu() {
                     variant={'surface'}
                     colorPalette={'green'}
                 >
-                    Projects
+                    Projetos
                 </Button>
             </Link>
         </Box>

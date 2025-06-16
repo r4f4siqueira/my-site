@@ -1,0 +1,28 @@
+name: Checar TypeScript e Lint
+
+on:
+    pull_request:
+        branches: [main]
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        strategy:
+            matrix:
+                node-version: [22.x]
+                # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+        steps:
+            - name: 🔷 Checkout branch to local machine 🔷
+              uses: actions/checkout@v4
+            - name: 🔷 Using Node.js version ${{ matrix.node-version }} 🔷
+              uses: actions/setup-node@v4
+              with:
+                  node-version: ${{ matrix.node-version }}
+            - name: 🔷 Instalando Dependências 🔷
+              run: npm install
+            - name: 🔷 Verificando erro de TypeScript 🔷
+              run: npm run ts-lint
+            - name: 🔷 Verificando erro de Lint (syntaxe)🔷
+              run: npm run lint

@@ -20,9 +20,9 @@ jobs:
               uses: actions/setup-node@v4
               with:
                   node-version: ${{ matrix.node-version }}
-            - name: 🔷 Installing dependencies 🔷
+            - name: 🔷 Instalando Dependências 🔷
               run: npm install
-            - name: 🔷 Linting typescript files 🔷
+            - name: 🔷 Verificando erro de TypeScript 🔷
               run: npm run ts-lint
-            - name: 🔷 Linting files with eslint 🔷
+            - name: 🔷 Verificando erro de Lint (syntaxe)🔷
               run: npm run lint

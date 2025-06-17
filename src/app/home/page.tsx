@@ -11,13 +11,13 @@ const items: Array<AccordionHomeType> = [
     {
         value: 'Contato',
         icon: <IoChatboxEllipsesOutline />,
-        title: 'Contato',
+        title: 'Minhas Redes Sociais',
         content: <LinksRedesSociais />,
     },
     {
         value: 'Stacks',
         icon: <TbDeviceDesktopHeart />,
-        title: 'Tecnologias',
+        title: 'Minhas Habilidades',
         content: <DevStacks />,
     },
     {

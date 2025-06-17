@@ -1,5 +1,6 @@
 import { Box, Button } from '@chakra-ui/react';
 import Link from 'next/link';
+import { ColorModeButton } from '../ui/color-mode';
 
 export function HeaderMenu() {
     return (
@@ -24,6 +25,8 @@ export function HeaderMenu() {
                     Projetos
                 </Button>
             </Link>
+
+            <ColorModeButton />
         </Box>
     );
 }

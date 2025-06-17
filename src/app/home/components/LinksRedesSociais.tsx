@@ -52,7 +52,7 @@ export default function LinksRedesSociais() {
             display={'flex'}
             flexDirection={'row'}
             alignItems={'center'}
-            fontSize={32}
+            fontSize={24}
             justifyContent={'space-between'}
             layerStyle="outline.subtle"
             _hover={{ colorPalette: 'cyan' }}

@@ -1,28 +1,30 @@
 import { Accordion, Grid, GridItem, Image } from '@chakra-ui/react';
-import { LuChartBarStacked, LuTags } from 'react-icons/lu';
 import LinksRedesSociais from './components/LinksRedesSociais';
 import DevStacks from './components/DevStacks';
 import Sobre from './components/Sobre';
 import AcordionHome, { AccordionHomeType } from './components/AcordionHome';
+import { TbDeviceDesktopHeart } from 'react-icons/tb';
+import { FaInfo } from 'react-icons/fa';
+import { IoChatboxEllipsesOutline } from 'react-icons/io5';
 
 const items: Array<AccordionHomeType> = [
     {
-        value: 'Sobre',
-        icon: <LuTags />,
-        title: 'Sobre Mim',
-        content: <Sobre />,
-    },
-    {
         value: 'Contato',
-        icon: <LuChartBarStacked />,
+        icon: <IoChatboxEllipsesOutline />,
         title: 'Contato',
         content: <LinksRedesSociais />,
     },
     {
         value: 'Stacks',
-        icon: <LuChartBarStacked />,
-        title: 'Colocar mais alguma coisa',
+        icon: <TbDeviceDesktopHeart />,
+        title: 'Tecnologias',
         content: <DevStacks />,
+    },
+    {
+        value: 'Sobre',
+        icon: <FaInfo />,
+        title: 'Sobre Mim',
+        content: <Sobre />,
     },
 ];
 
@@ -49,7 +51,13 @@ export default function HomePage() {
             </GridItem>
 
             <GridItem colSpan={[4, 4, 3, 3]}>
-                <Accordion.Root collapsible>{items.map(AcordionHome)}</Accordion.Root>
+                <Accordion.Root
+                    collapsible
+                    multiple
+                    defaultValue={['Contato']}
+                >
+                    {items.map(AcordionHome)}
+                </Accordion.Root>
             </GridItem>
         </Grid>
     );

@@ -4,6 +4,7 @@ import { Provider } from '@/components/ui/provider';
 import Header from '@/components/Header/Header';
 import { Box, Center } from '@chakra-ui/react';
 import { Toaster } from '@/components/ui/toaster';
+import MainContext from './mainContext';
 
 const geistSans = Geist({
     variable: '--font-geist-sans',
@@ -31,18 +32,20 @@ export default function RootLayout({
             suppressHydrationWarning
         >
             <body className={`${geistSans.variable} ${geistMono.variable}`}>
-                <Provider>
-                    <Header />
-                    <Center>
-                        <Box
-                            w={['100%', '100%', '90%', '80%']}
-                            p={4}
-                        >
-                            {children}
-                        </Box>
-                    </Center>
-                    <Toaster />
-                </Provider>
+                <MainContext>
+                    <Provider>
+                        <Header />
+                        <Center>
+                            <Box
+                                w={['100%', '100%', '90%', '80%']}
+                                p={4}
+                            >
+                                {children}
+                            </Box>
+                        </Center>
+                        <Toaster />
+                    </Provider>
+                </MainContext>
             </body>
         </html>
     );

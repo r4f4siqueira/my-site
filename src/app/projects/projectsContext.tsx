@@ -1,18 +1,18 @@
 'use client';
 
 import { createContext, ReactNode, useEffect, useState } from 'react';
-import { getDataReposGitHub } from '../../../utils/gitHub-api';
+import { getDataReposGitHub, GitHubReposResponse } from '../../../utils/gitHub-api';
 
 interface ProjectsContextInterface {
-    gitHubReposData: Array<any>;
+    gitHubReposData: Array<GitHubReposResponse>;
 }
 
-export const CreateMainContext = createContext<ProjectsContextInterface>({
+export const CreateProjectsContext = createContext<ProjectsContextInterface>({
     gitHubReposData: [],
 });
 
-export default function MainContext({ children }: { children: ReactNode }) {
-    const [gitHubReposData, setGitHubData] = useState([]);
+export default function ProjectsContext({ children }: { children: ReactNode }) {
+    const [gitHubReposData, setGitHubData] = useState<Array<GitHubReposResponse>>([]);
 
     useEffect(() => {
         async function getData() {
@@ -22,5 +22,5 @@ export default function MainContext({ children }: { children: ReactNode }) {
         getData();
     }, []);
 
-    return <CreateMainContext.Provider value={{ gitHubReposData }}>{children}</CreateMainContext.Provider>;
+    return <CreateProjectsContext.Provider value={{ gitHubReposData }}>{children}</CreateProjectsContext.Provider>;
 }

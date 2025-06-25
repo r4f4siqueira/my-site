@@ -25,7 +25,27 @@ export async function getDataUserGitHub(): Promise<GitHubUserResponse | undefine
     }
 }
 
-export async function getDataReposGitHub() {
+export interface GitHubReposResponse {
+    id: number;
+    name: string;
+    description: string;
+    fork: boolean;
+    url: string;
+    created_at: Date;
+    updated_at: Date;
+    clone_url: string;
+    language: string;
+    archived: boolean;
+    topics: Array<string>;
+    stargazers_count: number;
+    homepage: string;
+    open_issues: number;
+    forks: number;
+    whatchers: number;
+    default_branch: string;
+}
+
+export async function getDataReposGitHub(): Promise<Array<GitHubReposResponse> | undefined> {
     try {
         const response = await fetch('https://api.github.com/users/r4f4siqueira/repos?sort=updated&direction=desc');
         if (!response.ok) {

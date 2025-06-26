@@ -6,7 +6,8 @@ export function HeaderMenu() {
     return (
         <Box
             display={'flex'}
-            justifyContent={'space-evenly'}
+            justifyContent={'end'}
+            gap={[4, 4, 4, 8]}
         >
             <Link href={'/'}>
                 <Button

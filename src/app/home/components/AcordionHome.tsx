@@ -11,7 +11,7 @@ export interface AccordionHomeType {
 export default function AcordionHome(item: AccordionHomeType, index?: number) {
     return (
         <Accordion.Item
-            key={item.value || index}
+            key={index || item.value}
             value={item.value}
         >
             <Accordion.ItemTrigger>

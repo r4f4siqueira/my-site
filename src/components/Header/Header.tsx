@@ -1,5 +1,6 @@
-import { Grid, GridItem, Image, VStack } from '@chakra-ui/react';
+import { Box, Grid, GridItem, Image, VStack } from '@chakra-ui/react';
 import { HeaderMenu } from '../HeaderMenu/HeaderMenu';
+import Link from 'next/link';
 
 export default function Header() {
     return (
@@ -12,12 +13,15 @@ export default function Header() {
                 w={'100%'}
             >
                 <GridItem colSpan={1}>
-                    <Image
-                        src={'imgs/RafaelLogo.png'}
-                        alt="Logo"
-                        boxSize="36px"
-                        rounded={'md'}
-                    />
+                    <Box w={'36px'}>
+                        <Link href={'/'}>
+                            <Image
+                                src={'imgs/RafaelLogo.png'}
+                                alt="Logo"
+                                rounded={'md'}
+                            />
+                        </Link>
+                    </Box>
                 </GridItem>
                 <GridItem colSpan={2}>
                     <HeaderMenu />

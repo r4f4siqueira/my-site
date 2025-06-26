@@ -1,31 +1,17 @@
 import { Grid, GridItem } from '@chakra-ui/react';
-import { ColorModeButton } from '../ui/color-mode';
 import { HeaderMenu } from '../HeaderMenu/HeaderMenu';
 
 export default function Header() {
     return (
         <Grid
             templateColumns={'repeat(3, 1fr)'}
-            gap={4}
+            gap={[0, 1, 4, 4]}
             background={'bg.muted'}
             padding={1}
         >
-            <GridItem
-                display={'flex'}
-                justifyContent={'center'}
-            >
-                <ColorModeButton />
-            </GridItem>
-
-            <GridItem>
+            <GridItem colSpan={1} />
+            <GridItem colSpan={2}>
                 <HeaderMenu />
-            </GridItem>
-
-            <GridItem
-                display={'flex'}
-                justifyContent={'center'}
-            >
-                <ColorModeButton />
             </GridItem>
         </Grid>
     );

@@ -1,3 +1,4 @@
+'use client';
 import { Accordion, Grid, GridItem, Image } from '@chakra-ui/react';
 import LinksRedesSociais from './components/LinksRedesSociais';
 import DevStacks from './components/DevStacks';
@@ -6,18 +7,20 @@ import AcordionHome, { AccordionHomeType } from './components/AcordionHome';
 import { TbDeviceDesktopHeart } from 'react-icons/tb';
 import { FaInfo } from 'react-icons/fa';
 import { IoChatboxEllipsesOutline } from 'react-icons/io5';
+import { useContext } from 'react';
+import { CreateMainContext } from '../mainContext';
 
 const items: Array<AccordionHomeType> = [
     {
         value: 'Contato',
         icon: <IoChatboxEllipsesOutline />,
-        title: 'Contato',
+        title: 'Minhas Redes Sociais',
         content: <LinksRedesSociais />,
     },
     {
         value: 'Stacks',
         icon: <TbDeviceDesktopHeart />,
-        title: 'Tecnologias',
+        title: 'Minhas Habilidades',
         content: <DevStacks />,
     },
     {
@@ -29,6 +32,8 @@ const items: Array<AccordionHomeType> = [
 ];
 
 export default function HomePage() {
+    const { gitHubData } = useContext(CreateMainContext);
+
     return (
         <Grid
             templateColumns="repeat(4, 1fr)"
@@ -45,8 +50,8 @@ export default function HomePage() {
                     h="200px"
                     w="200px"
                     fit="cover"
-                    alt="Naruto Uzumaki"
-                    src="https://bit.ly/naruto-sage"
+                    alt={gitHubData?.name || 'Rafael Siqueira'}
+                    src={gitHubData?.avatar_url}
                 />
             </GridItem>
 

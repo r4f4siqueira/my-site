@@ -1,11 +1,13 @@
 import { Box, Button } from '@chakra-ui/react';
 import Link from 'next/link';
+import { ColorModeButton } from '../ui/color-mode';
 
 export function HeaderMenu() {
     return (
         <Box
             display={'flex'}
-            justifyContent={'space-evenly'}
+            justifyContent={'end'}
+            gap={[4, 4, 4, 8]}
         >
             <Link href={'/'}>
                 <Button
@@ -24,6 +26,8 @@ export function HeaderMenu() {
                     Projetos
                 </Button>
             </Link>
+
+            <ColorModeButton />
         </Box>
     );
 }

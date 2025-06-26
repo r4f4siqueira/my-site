@@ -37,6 +37,7 @@ export default function RootLayout({
                         <Header />
                         <Center>
                             <Box
+                                maxWidth={'1920px'}
                                 w={['100%', '100%', '90%', '80%']}
                                 p={4}
                             >

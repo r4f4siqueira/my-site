@@ -1,6 +1,6 @@
-import { Card, Grid, GridItem, Stack, Text } from '@chakra-ui/react';
+import { Card, Grid, GridItem, Link, Stack, Text } from '@chakra-ui/react';
 import { GitHubReposResponse } from '../../../../utils/gitHub-api';
-import { GoRepoForked, GoStar } from 'react-icons/go';
+import { GoIssueOpened, GoLinkExternal, GoRepoForked, GoStar } from 'react-icons/go';
 
 export default function CardProjects(item: GitHubReposResponse, index?: number) {
     return (
@@ -9,8 +9,9 @@ export default function CardProjects(item: GitHubReposResponse, index?: number) 
             colSpan={1}
         >
             <Card.Root
-                height={'200px'}
+                height={'220px'}
                 size={'sm'}
+                _hover={{ border: 'solid 1px' }}
             >
                 <Card.Body gap="2">
                     <Card.Title>{item.name}</Card.Title>
@@ -30,7 +31,12 @@ export default function CardProjects(item: GitHubReposResponse, index?: number) 
                                 alignItems={'center'}
                                 justifyContent={'start'}
                             >
-                                <Text fontSize={'sm'}>{item.language}</Text>
+                                <Text
+                                    fontSize={'sm'}
+                                    title="Linguagem do Projeto"
+                                >
+                                    {item.language}
+                                </Text>
                             </Stack>
                         </GridItem>
 
@@ -40,9 +46,17 @@ export default function CardProjects(item: GitHubReposResponse, index?: number) 
                                 alignItems={'center'}
                                 justifyContent={'end'}
                             >
-                                <GoStar />
+                                <GoStar title="Numero de estrelas" />
                                 {item.stargazers_count}
-                                <GoRepoForked />
+                                <GoIssueOpened title="Issue Abertas" />
+                                {item.open_issues}
+                                {item.fork && <GoRepoForked title="Fork " />}
+                                <Link
+                                    href={item.svn_url}
+                                    target="_blank"
+                                >
+                                    <GoLinkExternal title="Abrir no GitHub" />
+                                </Link>
                             </Stack>
                         </GridItem>
                     </Grid>

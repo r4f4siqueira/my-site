@@ -43,6 +43,7 @@ export interface GitHubReposResponse {
     forks: number;
     whatchers: number;
     default_branch: string;
+    svn_url: string;
 }
 
 export async function getDataReposGitHub(): Promise<Array<GitHubReposResponse> | undefined> {

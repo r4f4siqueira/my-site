@@ -47,9 +47,7 @@ export default function HomePage() {
             >
                 <Image
                     rounded="md"
-                    h="200px"
-                    w="200px"
-                    fit="cover"
+                    boxSize={['200px', '200px', '165px', '270px']}
                     alt={gitHubData?.name || 'Rafael Siqueira'}
                     src={gitHubData?.avatar_url}
                 />

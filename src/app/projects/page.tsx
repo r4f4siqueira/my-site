@@ -1,7 +1,8 @@
 'use client';
-import { Grid, GridItem, Text } from '@chakra-ui/react';
+import { Grid } from '@chakra-ui/react';
 import { useContext } from 'react';
 import { CreateProjectsContext } from './projectsContext';
+import CardProjects from './components/CardProjects';
 
 export default function ProjectsPage() {
     const { gitHubReposData } = useContext(CreateProjectsContext);
@@ -12,21 +13,7 @@ export default function ProjectsPage() {
             gap={[1, 2, 3, 3]}
             alignItems={'center'}
         >
-            {gitHubReposData &&
-                gitHubReposData?.map((repo) => (
-                    <GridItem
-                        key={repo.id}
-                        colSpan={1}
-                        border={'solid red'}
-                    >
-                        <Text>{repo.name}</Text>
-                        <Text>{repo.language}</Text>
-                        <Text>{repo.description}</Text>
-                        <Text>{repo.open_issues}</Text>
-                        <Text>{repo.stargazers_count}</Text>
-                        <Text>{repo.whatchers}</Text>
-                    </GridItem>
-                ))}
+            {gitHubReposData && gitHubReposData.map(CardProjects)}
         </Grid>
     );
 }

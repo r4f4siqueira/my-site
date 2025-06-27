@@ -39,7 +39,7 @@ export default function RootLayout({
                             <Box
                                 maxWidth={'1920px'}
                                 w={['100%', '100%', '90%', '80%']}
-                                p={4}
+                                p={[1, 1, 2, 4]}
                             >
                                 {children}
                             </Box>

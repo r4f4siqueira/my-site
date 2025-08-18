@@ -1,4 +1,3 @@
-'use client';
 import { Box, Link, Text } from '@chakra-ui/react';
 import { FaFacebook, FaGithub, FaInstagram, FaLinkedin, FaRegCopy } from 'react-icons/fa';
 import { FiExternalLink } from 'react-icons/fi';
@@ -29,7 +28,7 @@ const links: Array<LinkRedesSociais> = [
         nome: 'Facebook',
         titulo: 'Rafael Siqueira',
         icon: <FaFacebook />,
-        link: 'https://www.facebook.com/rafael.foguinho.9',
+        link: 'https://www.facebook.com/r4f4siqueira',
     },
     {
         nome: 'Instagran',

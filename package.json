@@ -6,7 +6,7 @@
         "dev": "next dev",
         "build": "next build",
         "start": "next start",
-        "lint": "next lint",
+        "lint": "eslint . --ext .js,.jsx,.ts,.tsx --fix ",
         "ts-lint": "npx tsc --noEmit --incremental"
     },
     "dependencies": {
@@ -23,8 +23,8 @@
         "@types/node": "^24",
         "@types/react": "^19",
         "@types/react-dom": "^19",
-        "eslint": "^9",
-        "eslint-config-next": "16.0.6",
+        "eslint": "^9.39.1",
+        "eslint-config-next": "^16.0.6",
         "typescript": "^5"
     }
 }

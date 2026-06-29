@@ -10,10 +10,14 @@ jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: FirebaseExtended/action-hosting-deploy@v0
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          repoToken: ${{ secrets.GITHUB_TOKEN }}
-          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_RAFAEL_SIQUEIRA_62915 }}
-          channelId: live
-          projectId: rafael-siqueira-62915
+          node-version: 20
+      - name: Deploy directly via Firebase CLI
+        run: npx firebase-tools@15.22.1 deploy --only hosting --project rafael-siqueira-62915
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}

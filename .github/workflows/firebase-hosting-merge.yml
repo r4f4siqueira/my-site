@@ -18,3 +18,5 @@ jobs:
           channelId: live
           projectId: rafael-siqueira-62915
           firebaseToolsVersion: "15.22.1"
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}

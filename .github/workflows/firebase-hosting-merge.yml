@@ -19,4 +19,4 @@ jobs:
           projectId: rafael-siqueira-62915
           firebaseToolsVersion: "15.22.1"
         env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          GOOGLE_APPLICATION_CREDENTIALS: ${{ env.GOOGLE_APPLICATION_CREDENTIALS }}

@@ -18,3 +18,4 @@ jobs:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_RAFAEL_SIQUEIRA_62915 }}
           projectId: rafael-siqueira-62915
+          firebaseToolsVersion: "15.22.1"

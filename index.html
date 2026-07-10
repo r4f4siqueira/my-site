@@ -25,12 +25,18 @@
   </head>
   <body>
     <nav class="navbar">
-      <div class="nav-content">
+      <div class="nav-content" id="navContent">
         <a href="#sobre" class="nav-link">Links</a>
         <a href="#projetos" class="nav-link">Projetos</a>
         <a href="#experiencia" class="nav-link">Experiência</a>
+        <a href="#formacao" class="nav-link">Formação</a>
         <a href="#stack" class="nav-link">Stack</a>
       </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
     </nav>
 
     <main class="container">
@@ -182,7 +188,7 @@
             <p>
               Ferramenta para controle de atendimento ao cliente para empresas
               de TI, telemarketing e semelhantes; Foi meu TCC e onde eu aprendi
-              a como não fazer um sistema, já que nãi tinha muito conhecimento a
+              a como NÃO fazer um sistema, já que não tinha muito conhecimento a
               respeito das ferramentase e tecnologias envolvidas no projeto.
             </p>
           </div>
@@ -296,14 +302,106 @@
 
           <div class="role-container">
             <div class="role-header">
-              <h4>Garçom</h4>
+              <h4>Garçom & Atendente</h4>
               <span class="career-date">Jan 2015 - Mar 2018</span>
             </div>
             <ul class="career-tasks">
-              <li>Vendas.</li>
-              <li>Controle de caixa.</li>
-              <li>Atendimento ao Cliente.</li>
-              <li>Organização do local.</li>
+              <li>
+                Vendas de produtos, como por exemplo doces ou ingredientes de
+                receitas que eram vendidas no local tal como massas, recheios e
+                afins.
+              </li>
+              <li>
+                Ajudando na organização do local, separando talheres,
+                organização das mesas e auxiliando em demais setores sempre que
+                necessário.
+              </li>
+              <li>
+                Atendimento ao Cliente auxiliando tanto na escolha dos produtos
+                quanto anotando os pedidos para envialos a cozinha;
+              </li>
+              <li>
+                Controle de caixa, como abertura de caixa, fechamento de caixa,
+                conciliação de valores e demais funções relacionadas a gestão de
+                caixa.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="career-section" id="formacao">
+      <h2>Formação Acadêmica</h2>
+      <div class="career-container">
+        <div class="career-card">
+          <div class="company-header">
+            <h3 class="company-name">
+              UNIGRAN - Centro Universitário da Grande Dourados
+            </h3>
+            <!-- <span class="company-duration">Concluído</span> -->
+          </div>
+
+          <div class="role-container">
+            <div class="role-header">
+              <h4>Engenharia de Software - <i>Bacharel Presencial</i></h4>
+              <span class="career-date">2018 - 2022</span>
+            </div>
+            <ul class="career-tasks">
+              <li>
+                Graduação tecnológica voltada para análise, projeto,
+                desenvolvimento, teste e implementação de sistemas da
+                informação.
+              </li>
+
+              <li>
+                Desenvolvimento do projeto <strong>UProtocol</strong> como
+                Trabalho de Conclusão de Curso (TCC), focando no controle de
+                atendimentos para empresas de TI.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="career-container">
+        <div class="career-card">
+          <div class="company-header">
+            <h3 class="company-name">
+              Escola Estadual Antonia da Silveira Capilé - (PRONATEC)
+            </h3>
+            <!-- <span class="company-duration">Concluído</span> -->
+          </div>
+
+          <div class="role-container">
+            <div class="role-header">
+              <h4>Técnico em Serviços Jurídicos - <i>Técnico Presencial</i></h4>
+              <span class="career-date">2015 - 2017</span>
+            </div>
+            <ul class="career-tasks">
+              <li>
+                Suporte administrativo e operacional a escritórios de advocacia,
+                cartórios e departamentos jurídicos. Organização processos,
+                controle prazos judiciais, redação documentos simples e
+                atendimento ao cliente, sempre sob supervisão de um profissional
+                graduado.
+              </li>
+            </ul>
+          </div>
+
+          <div class="role-container">
+            <div class="role-header">
+              <h4>Técnico em Logística - <i>Técnico Presencial</i></h4>
+              <span class="career-date">2013 - 2015</span>
+            </div>
+            <ul class="career-tasks">
+              <li>
+                Planejar, executar e controlar toda a cadeia de suprimentos,
+                gerenciando o fluxo de mercadorias desde a origem até o cliente
+                final, otimizando estoques, organizando armazéns, definindo
+                modais de transporte e calculando rotas para reduzir custos e
+                prazos.
+              </li>
             </ul>
           </div>
         </div>
@@ -442,5 +540,22 @@
     <footer class="footer">
       <p>&copy; r4f4siqueira</p>
     </footer>
+    <script>
+      const menuToggle = document.getElementById("menuToggle");
+      const navContent = document.getElementById("navContent");
+      const navLinks = document.querySelectorAll(".nav-link");
+
+      menuToggle.addEventListener("click", () => {
+        menuToggle.classList.toggle("active");
+        navContent.classList.toggle("active");
+      });
+
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          menuToggle.classList.remove("active");
+          navContent.classList.remove("active");
+        });
+      });
+    </script>
   </body>
 </html>

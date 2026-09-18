@@ -3,13 +3,14 @@ html {
 }
 
 :root {
-    --bg-color: #0f172a; /* Slate 900 */
-    --card-bg: rgba(30, 41, 59, 0.7); /* Slate 800 with opacity for glassmorphism */
-    --card-hover: rgba(51, 65, 85, 0.9); /* Slate 700 */
-    --text-primary: #f8fafc; /* Slate 50 */
-    --text-secondary: #94a3b8; /* Slate 400 */
-    --accent: #3b82f6; /* Blue 500 */
-    --border-color: rgba(255, 255, 255, 0.1);
+    --bg-color: #050505; /* Deep Jet Black */
+    --card-bg: rgba(18, 18, 20, 0.7); /* Sleek Glass Dark Card */
+    --card-hover: rgba(28, 28, 32, 0.95); /* Elevated Hover State */
+    --text-primary: #f4f4f5; /* Crisp Off-White */
+    --text-secondary: #a1a1aa; /* Refined Muted Gray */
+    --accent: #ffffff; /* Modern Clean White Accent */
+    --border-color: rgba(255, 255, 255, 0.1); /* Subtle Premium Border */
+    --border-hover: rgba(255, 255, 255, 0.25);
 }
 
 * {
@@ -28,8 +29,9 @@ body {
     justify-content: center;
     align-items: center;
     background-image: 
-        radial-gradient(circle at 15% 50%, rgba(59, 130, 246, 0.15), transparent 25%),
-        radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.15), transparent 25%);
+        radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.04), transparent 45%),
+        radial-gradient(circle at 15% 50%, rgba(255, 255, 255, 0.02), transparent 25%),
+        radial-gradient(circle at 85% 30%, rgba(255, 255, 255, 0.02), transparent 25%);
     padding: 6rem 0 2rem 0;
 }
 
@@ -49,9 +51,9 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(15, 23, 42, 0.85);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background-color: rgba(5, 5, 5, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--border-color);
     z-index: 1000;
     display: flex;
@@ -99,7 +101,7 @@ body {
 .avatar {
     width: 100px;
     height: 100px;
-    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    background: linear-gradient(135deg, #27272a, #09090b);
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -107,9 +109,9 @@ body {
     font-size: 2.5rem;
     font-weight: 700;
     color: white;
-    box-shadow: 0 8px 32px rgba(59, 130, 246, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
     margin-bottom: 0.5rem;
-    border: 3px solid rgba(255, 255, 255, 0.1);
+    border: 3px solid rgba(255, 255, 255, 0.15);
 }
 
 .avatar img {
@@ -217,6 +219,26 @@ body {
     font-size: 0.95rem;
     color: var(--text-secondary);
     line-height: 1.6;
+    min-height: 4.8em;
+}
+
+.typewriter-cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1.1em;
+    background-color: var(--accent);
+    margin-left: 2px;
+    vertical-align: -0.15em;
+    animation: blinkCursor 0.8s infinite;
+}
+
+@keyframes blinkCursor {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
 }
 
 /* Career Section */
@@ -314,9 +336,10 @@ body {
 
 .career-date {
     font-size: 0.8rem;
-    color: var(--accent);
+    color: var(--text-primary);
     font-weight: 600;
-    background-color: rgba(59, 130, 246, 0.1);
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     padding: 0.25rem 0.6rem;
     border-radius: 9999px;
 }
@@ -339,7 +362,7 @@ body {
 
 .career-tasks li::before {
     content: "•";
-    color: var(--accent);
+    color: var(--text-secondary);
     font-weight: bold;
     position: absolute;
     left: 0;
@@ -436,7 +459,7 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 2rem;
-    background-color: rgba(15, 23, 42, 0.4);
+    background-color: rgba(255, 255, 255, 0.015);
     border-top: 1px solid var(--border-color);
     border-bottom: 1px solid var(--border-color);
     margin-top: 3rem;
@@ -581,14 +604,14 @@ body {
         right: -100%;
         width: 260px;
         height: 100vh;
-        background-color: rgba(15, 23, 42, 0.98);
+        background-color: rgba(10, 10, 10, 0.98);
         border-left: 1px solid var(--border-color);
         flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: 2rem;
         transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.3);
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.6);
         backdrop-filter: blur(16px);
         -webkit-backdrop-filter: blur(16px);
         z-index: 1000;

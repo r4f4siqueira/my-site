@@ -13,7 +13,7 @@
       name="keywords"
       content="Rafael Siqueira, Desenvolvedor, Software Engineer, r4f4siqueira"
     />
-    <meta name="theme-color" content="#0f172a" />
+    <meta name="theme-color" content="#050505" />
     <link rel="icon" href="public/new-r.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -53,9 +53,7 @@
       <section class="about-section" id="sobre">
         <h2>Sobre Mim</h2>
         <p>
-          Olá! Sou o Rafael Siqueira, Desenvolvedor / Software Engineer.
-          Apaixonado por tecnologia e por criar soluções inovadoras através do
-          código.
+          <span id="typewriterText"></span><span class="typewriter-cursor" aria-hidden="true"></span>
         </p>
       </section>
 
@@ -575,6 +573,37 @@
           navContent.classList.remove("active");
         });
       });
+
+      // Typewriter Effect
+      const typewriterElement = document.getElementById("typewriterText");
+      const textToType =
+        "Olá! Sou o Rafael Siqueira, Desenvolvedor / Software Engineer. Apaixonado por tecnologia e por criar soluções inovadoras através do código.";
+      let charIndex = 0;
+
+      function typeWriter() {
+        if (!typewriterElement) return;
+
+        if (charIndex < textToType.length) {
+          typewriterElement.textContent += textToType.charAt(charIndex);
+          charIndex++;
+
+          let delay = 35;
+          const currentChar = textToType.charAt(charIndex - 1);
+          if (currentChar === "." || currentChar === "!") {
+            delay = 350;
+          } else if (currentChar === ",") {
+            delay = 200;
+          }
+
+          setTimeout(typeWriter, delay);
+        }
+      }
+
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        if (typewriterElement) typewriterElement.textContent = textToType;
+      } else {
+        setTimeout(typeWriter, 500);
+      }
     </script>
   </body>
 </html>
